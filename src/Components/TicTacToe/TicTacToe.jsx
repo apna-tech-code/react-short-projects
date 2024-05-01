@@ -1,4 +1,5 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import "./ticTacToe.css";
 
 const TicTacToe = () => {
   const [size, setSize] = useState(3);
@@ -19,9 +20,9 @@ const TicTacToe = () => {
     if (selectedStep.player1?.length > 2 || selectedStep.player2?.length > 2) {
       const winSymbol = checkWinner();
       if (winSymbol === "X") {
-        setWinner(1)
+        setWinner(1);
       } else if (winSymbol === "O") {
-        setWinner(2)
+        setWinner(2);
       }
     }
   }, [selectedStep]);
@@ -142,69 +143,37 @@ const TicTacToe = () => {
   };
 
   return (
-    <>
-      <h2>
-        <strong>{winner ? `Player ${winner} Win. ` : `Player ${isP1Turn ? "1" : "2"} Turn. `} </strong>
-      </h2>
-      {/* <div>
-        <input
-          type="number"
-          placeholder="Set Size"
-          defaultValue={size}
-          ref={sizeRef}
-        ></input>
-        <br />
-        <br />
+    <div className="container">
+      <div className="main-content">
+        <h2 className="c-white text-center">
+          <strong style={{ color: winner ? "yellow" : "white" }}>
+            {winner
+              ? `Player ${winner} Wins`
+              : `Player ${isP1Turn ? "1" : "2"} Turn`}
+          </strong>
+        </h2>
         <div>
-          <button
-            type="button"
-            className="btn-outline"
-            onClick={() => {
-              const newSize = +sizeRef.current.value;
-              if (newSize < 3) {
-                alert("Min size 3 allowed");
-              } else {
-                setSize(newSize);
-              }
-            }}
-          >
-            Set Size
-          </button>
-          &nbsp; &nbsp; &nbsp;
-          <button
-            type="button"
-            className="btn-outline"
-            onClick={() => {
-              handleClear();
-            }}
-          >
-            Reset
-          </button>
+          {sizeArr.map((x, i) => (
+            <div key={`tic-${i}`} className="tic-tac-toe">
+              {x.map((sub, j) => {
+                const sign = renderSign(i, j);
+                return (
+                  <div
+                    key={`tic-${i}-${j}`}
+                    onClick={() =>
+                      sign ? alert("Already clicked") : handleSelection(i, j)
+                    }
+                    className="cell"
+                  >
+                    {sign}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
-        <br />
-      </div> */}
-
-      <div>
-        {sizeArr.map((x, i) => (
-          <div key={`tic-${i}`} className="ticTacToe">
-            {x.map((sub, j) => {
-              const sign = renderSign(i, j);
-              return (
-                <div
-                  key={`tic-${i}-${j}`}
-                  onClick={() =>
-                    sign ? alert("Already clicked") : handleSelection(i, j)
-                  }
-                  className="cell"
-                >
-                  {sign}
-                </div>
-              );
-            })}
-          </div>
-        ))}
       </div>
-    </>
+    </div>
   );
 };
 
