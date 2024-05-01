@@ -1,0 +1,150 @@
+.sign-in-main-card {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url("/public/mountain-bg.jpg") no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+}
+.flip-card {
+    width: 32vw;
+    height: 50vh;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    background-color: #40034133;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0px 2px 20px 2px #ffffff5e;
+    border-radius: 12px;
+}
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+}
+.down {
+    transform: rotateY(180deg);
+}
+.up {
+    transform: rotateY(0deg);
+}
+.flip-card-front {
+    background: transparent;
+    backdrop-filter: saturate(75%) blur(10px);
+    color: white;
+}
+.flip-card-back {
+    background: transparent;
+    backdrop-filter: saturate(75%) blur(10px);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+label {
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+    margin-top: 5px;
+    padding-left: 10px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+.inpt-icn{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #400341;
+}
+
+.inpt-icn-pwd{
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    color: #400341;
+    cursor: pointer;
+}
+
+.content {
+    position: relative;
+    height: 80%;
+    margin: 0px 12px;
+}
+
+.btn {
+    cursor: pointer;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    background-color: #400341;
+    box-shadow: 0px 0px 2px 1px #ffffff5e;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+}
+
+.btn:hover {
+    gap: 18px;
+    opacity: 0.8;
+    transform: scaleX(1.01);
+}
+
+
+
+.btn-grp {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .btn-capsule {
+        cursor: pointer;
+        border-radius: 15px;
+        width: 100px;
+        outline: none;
+        background: #ffffffc7;
+        font-weight: bold;
+        color: #400341;
+        height: 30px;
+        border: 1px solid #400341;
+    }
+
+    .btn-capsule-filled {
+        box-shadow: 0px 0px 4px 4px #ffffff5e;
+        border-radius: 15px;
+        width: 100px;
+        border: none;
+        outline: none;
+        background: #400341;
+        font-weight: bold;
+        color: white;
+        height: 30px;
+        cursor: pointer;
+        border: 1px solid white;
+    }
+}

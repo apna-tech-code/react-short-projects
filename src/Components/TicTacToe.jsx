@@ -8,7 +8,9 @@ const TicTacToe = () => {
     player2: [],
   });
   const [isP1Turn, setIsP1Turn] = useState(true);
+  const [winner, setWinner] = useState(null);
   const sizeRef = useRef(null);
+
   useEffect(() => {
     setSizeArr(Array(size).fill(Array(size).fill(null)));
   }, [size]);
@@ -16,15 +18,11 @@ const TicTacToe = () => {
   useEffect(() => {
     if (selectedStep.player1?.length > 2 || selectedStep.player2?.length > 2) {
       const winSymbol = checkWinner();
-      setTimeout(() => {
-        if (winSymbol === "X") {
-          alert("Player 1 Win.");
-          handleClear();
-        } else if (winSymbol === "O") {
-          alert("Player 2 Win.");
-          handleClear();
-        }
-      }, 500);
+      if (winSymbol === "X") {
+        setWinner(1)
+      } else if (winSymbol === "O") {
+        setWinner(2)
+      }
     }
   }, [selectedStep]);
 
@@ -139,14 +137,16 @@ const TicTacToe = () => {
   const handleClear = () => {
     setSelectedStep({ player1: [], player2: [] });
     setIsP1Turn(true);
+    setSize(3);
+    sizeRef.current.value = 3;
   };
 
   return (
     <>
       <h2>
-        <strong>Player {isP1Turn ? "1" : "2"} Turn. &nbsp; </strong>
+        <strong>{winner ? `Player ${winner} Win. ` : `Player ${isP1Turn ? "1" : "2"} Turn. `} </strong>
       </h2>
-      <div>
+      {/* <div>
         <input
           type="number"
           placeholder="Set Size"
@@ -175,16 +175,14 @@ const TicTacToe = () => {
             type="button"
             className="btn-outline"
             onClick={() => {
-              setSize(3);
               handleClear();
-              sizeRef.current.value = 3;
             }}
           >
             Reset
           </button>
         </div>
         <br />
-      </div>
+      </div> */}
 
       <div>
         {sizeArr.map((x, i) => (

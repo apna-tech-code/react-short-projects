@@ -1,53 +1,9 @@
 body {
-  background-color: (228, 226, 226);
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.ticTacToe {
-  display: flex;
-  .cell {
-    border: 1px solid black;
-    height: 70px;
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 26px;
-    font-weight: bolder;
-    background-color: rgb(206, 234, 206);
-    color: red;
-    cursor: pointer;
-  }
-}
-
-.btn {
-  background-color: rgb(59, 59, 250);
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
-.btn-outline {
-  background-color: transparent;
-  color: rgb(59, 59, 250);
-  outline: 1px solid rgb(59, 59, 250);
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input {
-  padding: 9px;
-  border-radius: 5px;
-}
-
-button:hover {
-  opacity: 0.88;
+.relative{
+  position:relative  !important;
 }
