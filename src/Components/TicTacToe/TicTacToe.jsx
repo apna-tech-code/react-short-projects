@@ -153,6 +153,44 @@ const TicTacToe = () => {
           </strong>
         </h2>
         <div>
+          <input
+            type="number"
+            placeholder="Set Size"
+            defaultValue={size}
+            ref={sizeRef}
+          ></input>
+          <br />
+          <br />
+          <div className="flex justify-between">
+            <button
+              type="button"
+              className="btn-outline"
+              onClick={() => {
+                const newSize = +sizeRef.current.value;
+                if (newSize < 3) {
+                  alert("Min size 3 allowed");
+                } else {
+                  setSize(newSize);
+                }
+              }}
+            >
+              Set Size
+            </button>
+            &nbsp; &nbsp; &nbsp;
+            <button
+              type="button"
+              className="btn-outline"
+              onClick={() => {
+                handleClear();
+              }}
+            >
+              Reset
+            </button>
+          </div>
+          <br />
+        </div>
+
+        <div>
           {sizeArr.map((x, i) => (
             <div key={`tic-${i}`} className="tic-tac-toe">
               {x.map((sub, j) => {
