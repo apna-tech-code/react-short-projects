@@ -1,0 +1,57 @@
+.share-container {
+  height: 100vh;
+  background: linear-gradient(to bottom, #d7d2cc 0%, #0a0c0e 100%);
+  background-size: 100% 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icn-wrapper {
+    cursor: pointer;
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    border-radius: 15px;
+    color: lightgray;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icn {
+      position: absolute;
+    }
+  }
+}
+.tooltip-container {
+  position: relative;
+}
+.tooltip-trigger {
+  cursor: pointer;
+}
+.tooltip-content {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, bottom 0.4s ease, visibility 0.4s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.tooltip-container:hover .tooltip-content {
+  bottom: 100%;
+  opacity: 1;
+  visibility: visible;
+}

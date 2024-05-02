@@ -20,6 +20,10 @@ body {
   justify-content: space-between;
 }
 
-.text-center{
+.text-center {
   text-align: center;
+}
+
+.bg-black {
+  background-color: black;
 }
