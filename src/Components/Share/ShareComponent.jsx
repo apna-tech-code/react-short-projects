@@ -4,31 +4,32 @@ import { ImFacebook2, ImInstagram, ImLinkedin } from "react-icons/im";
 import "./shareComp.css";
 
 const ShareComponent = () => {
+  const renderCustomComp = (icon, msg) => {
+    return (
+      <CustomTooltip msg={"Share on " + msg}>
+        <div className="icn-wrapper">{icon}</div>
+      </CustomTooltip>
+    );
+  };
   return (
     <>
       <div className="share-container">
-        <CustomTooltip msg="Share on Facebook">
-          <div className="icn-wrapper">
-            <ImFacebook2 size={90} className="icon" />
-          </div>
-        </CustomTooltip>
-        <CustomTooltip msg="Share on Instagram">
-          <div className="icn-wrapper">
-            <ImInstagram size={90} className="icon" />
-          </div>
-        </CustomTooltip>
-        <CustomTooltip msg="Share on LinkedIn">
-          <div className="icn-wrapper">
-            <ImLinkedin size={90} className="icon" />
-          </div>
-        </CustomTooltip>
-        <CustomTooltip msg="Share on Twitter">
-          <div className="icn-wrapper">
-            <div className="icn-wrapper">
-              <FaTwitterSquare size={105} className="icon" />
-            </div>
-          </div>
-        </CustomTooltip>
+        {renderCustomComp(
+          <ImFacebook2 size={90} className="icon" />,
+          "Facebook"
+        )}
+        {renderCustomComp(
+          <ImInstagram size={90} className="icon" />,
+          "Instagram"
+        )}
+        {renderCustomComp(
+          <ImLinkedin size={90} className="icon" />,
+          "LinkedIn"
+        )}
+        {renderCustomComp(
+          <FaTwitterSquare size={105} className="icon" />,
+          "Facebook"
+        )}
       </div>
     </>
   );
