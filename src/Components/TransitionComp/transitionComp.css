@@ -1,0 +1,54 @@
+.transition-container {
+  height: 100vh;
+  background: url("/public/star-bg.jpg") no-repeat;
+  background-size: 100% 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 160px;
+  .path-wrapper {
+    display: flex;
+    position: relative;
+    .icn {
+      z-index: 2;
+      color: white;
+      position: absolute;
+    }
+    .title {
+      position: absolute;
+      color: white;
+      top: 54px;
+      left: -140px;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    .icn-linear {
+      transition: all 5s linear;
+    }
+    .icn-ease {
+      transition: all 5s ease;
+    }
+    .icn-ease-in {
+      transition: all 5s ease-in;
+    }
+    .icn-ease-out {
+      transition: all 5s ease-out;
+    }
+    .icn-ease-in-out {
+      transition: all 5s ease-in-out;
+    }
+    .trigger-transition {
+      transform: translateX(40vw);
+    }
+  }
+  .t-main-content {
+    background: transparent;
+    backdrop-filter: saturate(75%) blur(10px);
+    color: white;
+    transform-style: preserve-3d;
+    box-shadow: 0px 2px 20px 2px #ffffff5e;
+    border-radius: 12px;
+    width: 100%;
+    height: 65px;
+    margin: 40px 0px;
+  }
+}
