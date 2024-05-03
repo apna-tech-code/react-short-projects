@@ -8,6 +8,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 import TransitionComp from "./Components/TransitionComp/TransitionComp";
 import ShareComponent from "./Components/Share/ShareComponent";
 import ShareBtnComponent from "./Components/ShareBtn/ShareBtnComponent";
+import ShowcaseGallery from "./Components/ShowcaseGallery/ShowcaseGallery";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/transition-ease" Component={TransitionComp}></Route>
           <Route path="/share" Component={ShareComponent}></Route>
           <Route path="/share-btn" Component={ShareBtnComponent}></Route>
+          <Route path="/showcase-gallery" Component={ShowcaseGallery}></Route>
         </Routes>
       </BrowserRouter>
     </div>
