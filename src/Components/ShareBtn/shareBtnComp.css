@@ -1,0 +1,100 @@
+.main-container {
+  background: url("/public/black-bg.jpg") no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100% 100%;
+
+  .icn-wrapper {
+    border-radius: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icn {
+      color: white;
+      padding: 10px;
+      position: absolute;
+      cursor: pointer;
+      transition: all 1.5s ease;
+      transform: rotate(0deg);
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      box-sizing: border-box;
+      background-color: black;
+      z-index: 1;
+    }
+
+    .item {
+      height: 60px;
+      width: 60px;
+      background-color: white;
+      box-sizing: border-box;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      scale: 0;
+      transition: scale 1s ease;
+      color: var(--color);
+      cursor: pointer;
+      border: 3px solid var(--color);
+
+      /* Comment-Uncomment below linese to see different style of animation */
+
+      transition: transform calc(0.1s * var(--iconIndex)) ease,
+        scale calc(0.1s * var(--iconIndex)) ease, color 0.5s ease,
+        background-color 0.5s ease;
+      /* transition: transform 1.5s ease, scale 1.5s ease, color 0.5s ease,
+        background-color 0.5s ease; */
+
+      &:hover {
+        background-color: var(--color);
+        color: white;
+        border: 2px solid white;
+      }
+    }
+  }
+  .active .icn {
+    border: 3px solid white;
+    padding: 20px;
+    transform: rotate(360deg);
+    box-shadow: 0px 0px 0px 4px black;
+  }
+  .active .item {
+    scale: 1;
+    rotate: 360deg;
+  }
+
+  .active .item1 {
+    transform: translate(100px, 0) rotate(360deg);
+  }
+  .active .item2 {
+    transform: translate(75px, 75px) rotate(360deg);
+  }
+  .active .item3 {
+    transform: translate(0, 100px) rotate(360deg);
+  }
+  .active .item4 {
+    transform: translate(-75px, 75px) rotate(360deg);
+  }
+  .active .item5 {
+    transform: translate(-100px, 0) rotate(360deg);
+  }
+  .active .item6 {
+    transform: translate(-75px, -75px) rotate(360deg);
+  }
+  .active .item7 {
+    transform: translate(0, -100px) rotate(360deg);
+  }
+  .active .item8 {
+    transform: translate(75px, -75px) rotate(360deg);
+  }
+}
