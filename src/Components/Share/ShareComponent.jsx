@@ -38,9 +38,9 @@ const ShareComponent = () => {
 const CustomTooltip = (props) => {
   const { children, msg } = props;
   return (
-    <div class="tooltip-container">
-      <div class="tooltip-trigger">{children}</div>
-      <div class="tooltip-content">{msg}</div>
+    <div className="tooltip-container">
+      <div className="tooltip-trigger">{children}</div>
+      <div className="tooltip-content">{msg}</div>
     </div>
   );
 };
