@@ -10,6 +10,7 @@ import ShareComponent from "./Components/Share/ShareComponent";
 import ShareBtnComponent from "./Components/ShareBtn/ShareBtnComponent";
 import ShowcaseGallery from "./Components/ShowcaseGallery/ShowcaseGallery";
 import Rating from "./Components/Rating/Rating";
+import ShareBtn2 from "./Components/ShareBtn2/ShareBtn2";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/transition-ease" Component={TransitionComp}></Route>
           <Route path="/share" Component={ShareComponent}></Route>
           <Route path="/share-btn" Component={ShareBtnComponent}></Route>
+          <Route path="/share-btn2" Component={ShareBtn2}></Route>
           <Route path="/showcase-gallery" Component={ShowcaseGallery}></Route>
           <Route path="/rating" Component={Rating}></Route>
         </Routes>
