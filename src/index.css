@@ -27,3 +27,21 @@ body {
 .bg-black {
   background-color: black;
 }
+
+.main-loader {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #d3d3d370;
+  position: fixed;
+  z-index: 1;
+}
+.route-content {
+  opacity: 0.6;
+}

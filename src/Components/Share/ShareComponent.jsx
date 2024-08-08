@@ -2,6 +2,7 @@ import React from "react";
 import { FaTwitterSquare } from "react-icons/fa";
 import { ImFacebook2, ImInstagram, ImLinkedin } from "react-icons/im";
 import "./shareComp.css";
+import CubeDark from "../Loader/CubeDark";
 
 const ShareComponent = () => {
   const renderCustomComp = (icon, msg) => {
